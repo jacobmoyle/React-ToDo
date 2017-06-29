@@ -10,10 +10,4 @@ describe('TodoApp', () => {
   it('should exist', () => {
     expect(TodoApp).toExist();
   });
-
-  describe('handleAddTodo', () => {
-    it('should add a new todo to todos', () => {
-
-    });
-  });
 });
