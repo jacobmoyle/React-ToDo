@@ -1,8 +1,10 @@
+var uuid = require('node-uuid')
 var React = require('react');
+
 var TodoList = require('TodoList');
 var TodoForm = require('TodoForm');
 var TodoSearch = require('TodoSearch')
-var uuid = require('node-uuid')
+var TodoAPI = require('TodoAPI')
 
 // Yo bro. I hear you like heavily coupled god objects.
 var TodoApp = React.createClass({
@@ -10,29 +12,11 @@ var TodoApp = React.createClass({
     return {
       showCompleted: false,
       searchText: '',
-      todos: [
-        {
-          id: uuid(),
-          text: 'Walk the dog',
-          completed: false
-        },
-        {
-          id: uuid(),
-          text: 'Scoop poop',
-          completed: true
-        },
-        {
-          id: uuid(),
-          text: 'Feed myself',
-          completed: true
-        },
-        {
-          id: uuid(),
-          text: 'Shred cheese',
-          completed: false
-        }
-      ]
+      todos: TodoAPI.getTodos()
     }
+  },
+  componentDidUpdate: function () {
+    TodoAPI.setTodos(this.state.todos);
   },
   handleToggle: function (id) {
     // lolwut
