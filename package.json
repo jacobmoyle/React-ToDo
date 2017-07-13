@@ -1,13 +1,13 @@
 {
-  "name": "react-timer",
+  "name": "react-todo",
   "version": "1.0.0",
-  "description": "Simple react app",
+  "description": "You may now do things",
   "main": "index.js",
   "scripts": {
     "test": "karma start",
     "start": "node server.js"
   },
-  "author": "Jacob",
+  "author": "Jacob Moyle",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.16.1",
