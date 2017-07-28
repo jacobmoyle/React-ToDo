@@ -23,6 +23,23 @@ describe('Actions', () => {
     expect(result).toEqual(action);
   });
 
+  it('should generate addTodos action object', () => {
+    var todos = [{
+      id: '111',
+      text: 'anything',
+      completed: false,
+      completedAt: undefined,
+      createdAt: 9002
+    }];
+    var action = {
+      type: 'ADD_TODOS',
+      todos
+    };
+    var result = actions.addTodos(action.todos);
+
+    expect(result).toEqual(action);
+  });
+
   it('should generate toggleShowCompleted action', () => {
     var action = {
       type: 'TOGGLE_SHOW_COMPLETED',

@@ -17,6 +17,7 @@ module.exports = {
 
     }
 
+    console.log('getTodos', todos);
     return $.isArray(todos) ? todos : []
   },
   filterTodos: function (todos, showCompleted, searchText) {
@@ -44,6 +45,6 @@ module.exports = {
       }
     });
 
-    return filteredTodos
+    return filteredTodos;
   }
 };
